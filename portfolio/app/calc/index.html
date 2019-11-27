@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>電卓</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding:0;
+			box-sizing: border-box;
+			font-family: ;
+		}
+		body{
+			margin: auto;
+			width: 100%;
+		}
+		.calc{
+			margin: auto;
+			text-align: center;
+			width: 250px;
+			height: 370px;
+			background-image: url(img/calc.jpg);
+			border-radius: 5px;
+			border:1px solid grey;
+			display: block;
+		}
+		h1{
+			font-family: "Oswald", serif;
+			color: #008d8d;
+			text-shadow:1px 1px 1px grey;
+		}
+		#disp{
+			width:190px;
+			height: 40px;
+			padding: 0 5px;
+			margin: 5px;
+			font-size: 20px;
+			border-top: 2px solid grey;
+		}
+		.wide{
+			margin: 10px;
+		}
+		input[type="button"]{
+			width: 40px;
+			height: 40px;
+			font-weight: 800;
+			border-radius: 50%;
+			border:1px inset grey;
+			background-color: #008d8d;
+			box-shadow:1px 1px 1px grey;
+		}
+		input[type="button"].num {
+			background-color:#dcdcdc ;
+			font-weight: 200;
+		}
+		#zero{
+			border-radius:;
+			width: 85px;
+		}
+
+
+	</style>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/calc.js"></script>
+</head>
+<body>
+	<div class="calc">
+		<H1>Calc</H1>
+		<form>
+			<div class="disp">
+				<input type="text" name="disp" id="disp" disabled>
+			</div>
+			<div class="wide">
+				<input type="button" name="clear" value="C" id="clear">
+				<input type="button" name="plusmin" value="+/-" id="plusmin">
+				<input type="button" name="percent" value="%" id="percent">
+				<input type="button" name="divide" value="÷" class="ope">
+			</div>
+			<div class="wide">
+				<input type="button" name="seven" value="7" class="num">
+				<input type="button" name="eight" value="8" class="num">
+				<input type="button" name="nine" value="9" class="num">
+				<input type="button" name="multiple" value="×" class="ope">
+			</div>
+			<div class="wide">
+				<input type="button" name="four" value="4" class="num">
+				<input type="button" name="five" value="5" class="num">
+				<input type="button" name="six" value="6" class="num">
+				<input type="button" name="minus" value="-" class="ope">
+			</div>
+			<div class="wide">
+				<input type="button" name="one" value="1" class="num">
+				<input type="button" name="two" value="2" class="num">
+				<input type="button" name="three" value="3" class="num">
+				<input type="button" name="plus" value="+" class="ope">
+			</div>
+			<div class="wide">
+				<input type="button" name="zero" value="0" class="num" id="zero">
+				<input type="button" name="dot" value="." class="dot">
+				<input type="button" name="equal" value="=" class="ope">
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>

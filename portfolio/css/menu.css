@@ -1,0 +1,494 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: #000033;
+    background: white;
+    font-family: "Oswald", serif;
+
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+    
+     /* 画像ファイルの指定 */
+  background-image: url(../img/S__17670146.jpg);
+   
+  /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+   
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+   
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+   
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size:cover;
+   
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+  background-color: white;
+}
+a{
+    text-decoration: none;
+}
+ul, li{
+    list-style: none;
+}
+img.klogo{
+    width: 170px;
+    padding-top: 10px;
+}
+.main_header { /**/
+    position: fixed;
+    max-height: 70px;
+    z-index: 999;
+    width: 100%;
+    padding: 10px ;
+    background: none;
+    overflow: hidden;
+    transition: all 0.3s;
+    opacity: 0;
+    /* top: -100px; */
+    top: 0;
+    font-family: "Oswald", sans-serif;
+}
+.sticky {
+    /*background-color: rgba(255,255,255,0.7);*/
+    opacity: 1;
+    top: 0px;
+    /*0border-bottom: 1px solid silver;*/
+}
+nav ul a {
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 0 5px;
+    line-height: 40px;
+    border-top: 1px solid transparent;
+    /*border-bottom: 1px solid transparent;*/
+    transition: all 500ms linear;
+}
+nav ul a.active {
+    padding:10px 5px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    transition: all 500ms 100ms linear;
+}
+nav {
+    float: right;
+    width: 60%;
+}
+nav ul {
+    padding:10px 0 10px 0;
+    float: left;
+    text-align: center;
+    width: 100%;
+    list-style: none;
+    overflow: hidden;
+}
+nav ul li {
+    display: inline-block;
+    margin-left: 35px;
+    line-height: 1.5;
+}
+.mobile-toggle{
+    display: none;
+}
+@media only screen and (max-width: 766px) {
+
+    .mobile-toggle span {
+        width: 30px;
+        height: 4px;
+        margin-bottom: 6px;
+        border-radius: 1000px;
+        display: block;
+        background-color: #003;
+    }
+    nav{
+        width: 100%;
+    }
+    nav ul li {
+        width: 100%;
+        padding: 7px 0;
+        margin: 0;
+    }
+}
+section {
+   margin:200px 0 ; 
+   padding:30px 0;
+   text-align: center;
+
+  
+}
+.frame{
+   background-color: rgba(255,255,255,0.7);
+    box-shadow: 5px 5px 8px gray;
+    display: inline-block;
+    margin:100px auto ;
+    text-align: center;
+    width: 100%;
+    padding: 30px 0;
+}
+
+.title{
+    padding: 350px 0 50px 0;
+    margin: 0;
+    text-shadow:1px 1px 1px grey;
+}
+.title >a >img{
+  width: 40%;
+}
+
+/*profile*/
+.pro{
+  
+}
+
+.row{
+  display: flex;
+  text-align: center;
+  margin: 10px auto ;
+  padding: 10px 0 10px 0;
+  width: 80%;
+}
+.row >div:first-child{
+  width: 80px;
+}
+.row >div:last-child{
+  width: 80%;
+  text-align: center;/*文字を左揃え*/
+  margin: 0 auto;
+  max-width: 960px;
+}
+.icon{
+  width: 80px;
+}
+
+.history{
+    display: flex;
+    margin: 0 auto;
+    max-width: 960px;
+    position: relative;
+
+}
+
+.text{
+    position: relative;
+
+}
+
+.text > a{
+    margin: 100px;
+    text-align: block;
+}
+
+/*画像を円形*/
+.text > a > img{ 
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border:3px solid #000000;
+
+}
+
+
+
+.year {
+    width: 30%;
+    text-align: center;
+    border-right:solid 5px;
+    top: 10px
+}
+.year > h2{
+  padding-top: 85px;
+  text-shadow:1px 1px 1px grey;
+}
+
+
+.text > h2 {
+  /* 三角の位置を固定するために設定 */
+  width: 100%; /* 幅 */
+  margin: 10px auto 20px; /* 上 左右 下のマージン */
+  padding: 10px; /* ふきだし内の余白 */
+  background: #fff; /* 背景色 */
+  border: 3px solid ; /* 線色 */
+  border-radius: 8px; /* <-追加 */
+  background-color: rgba(255,255,255,0.7);
+}
+.text >h4{
+  margin: 0 auto 40px;
+}
+
+
+.text >a:after { /* 三角 */
+  content: '';
+  border: 2px solid black;/*transparentは透明にする*/
+  width:24%;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  
+
+}
+
+}
+.text > h2::after { /* 地の部分 */
+  bottom: -27px;
+}
+
+
+
+}
+.center{
+    text-align: center;
+}
+.skill {
+   width: 75%;
+   margin: 10px auto; 
+   padding: 10px;
+}
+.skill2{
+   background-color: rgba(255,255,255,0.7);
+   border-radius: 10px;
+}
+.skills{
+  margin: 0 auto ; 
+  max-width: 960px;
+
+}
+
+.skills > li{
+display:inline-block;
+vertical-align: middle; /*高さを真ん中で合わせる*/
+width: 19%;
+ 
+}
+
+.art{
+  width: 200px;  
+}
+
+/* design全体設定 */
+* {
+  box-sizing: border-box;
+  }
+
+
+/* ポップアップウインドウの設定 
+.popup {
+  background-color: #efefef;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, .8);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 70vw;
+  height: 55vw;
+  overflow-y: scroll;
+}*/
+/* チェックボックスの初期設定 */
+#popup-on{
+  display: none;
+}
+/* チェックされたらポップアップウインドウを開く */
+#popup-on:checked + .popup{
+  display: block;
+}
+
+/* 閉じるアイコン（右上） */
+.icon-close{
+  background: #000;
+  color: #fff;
+  font-size: 30px;
+  padding: 0 10px;
+  position: absolute;
+  right: 0;
+}
+
+/* 閉じるボタン */
+.btn-close{
+  background: #000;
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px auto;
+  width: 95%;
+  text-align: center;
+}
+
+/* 開くボタン */
+.btn-open{
+  background: #fff;
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px auto;
+  width: 95%;
+  text-align: center;
+
+}
+
+  /* ポップアップの内容 */
+.popup-content{
+  margin: 40px auto 40px auto;
+  width: 90%;
+}
+
+
+img.popart{
+    width:300px;
+    height: auto;
+}
+.popup-content > img{
+    width:100%;
+}
+
+.content{
+    margin: 0 auto;
+    max-width: 960px;
+    padding:0 40px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+}
+
+
+.content >a{
+    margin: 10px auto;/*画像横幅自動調節*/
+    padding: 10px;
+    width: 30%;
+
+}
+.modal{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.js-modal-open >img{
+  width: 100%;
+  transition-duration: 0.2s; /*変化の時間*/
+}
+
+.js-modal-open >img:hover{
+  transform: scale(1.05,1.05); /*画像の拡大*/
+　cursor: pointer; /*カーソルをポインターにする*/ 
+  box-shadow: 8px 8px 8px gray;/*画像が浮く*/
+}
+
+.modal__bg{
+    background: rgba(0,0,0,0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%; 
+}
+.modal__content{
+    background: #fff;
+    left: 50%;
+    padding: 2%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+}
+.modal__content >p{
+    width: 100%;
+}
+.modal__content >p >img{
+    width: 100%
+}
+
+.modal js-modal{
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, .8);/*バックグラウンドの影*/
+    display: center;
+
+}
+
+
+
+.js-modal-close{
+  color: #000;
+  cursor: pointer;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  font-size: 140%;
+
+}
+#pop{
+
+ display: none;
+}
+
+/* コンタクト */
+.contact{
+  background-color: rgba(0,0,0,0);
+
+}
+
+form div{
+  padding: 12px;
+  font-size: 30px;
+}
+select{
+  width: 30em;
+
+}
+#kind{
+  width: 49%;
+  height: 3em;
+  border-radius: 5px;
+}
+input[name="name"]{
+  width: 50%;
+  height: 3em;
+  border-radius: 5px;
+}
+input[name="contact"]{
+  width: 50%;
+  height: 3em;
+  border-radius: 5px;
+}
+textarea{
+  width: 50%;
+  height: 10em;
+  border-radius: 5px;
+}
+input[type="submit"]{
+  margin: 20px 0;
+  width: 50%;
+  height: 3em;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  .main {
+    flex-direction: column;
+  }
+  /*スマホだと画像が１列になる*/
+  .content >a{ 
+    width: 100%;
+  }
+
+  .year {
+    width: 30%;
+    text-align: center;
+    top: 10px
+}
+.year > h2{
+  padding-top: 85px;
+  text-shadow:1px 1px 1px grey;
+}
+
+}
