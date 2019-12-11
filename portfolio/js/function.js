@@ -17,12 +17,7 @@ $(document).ready(function(){
 			$('.main_header').addClass('open-nav');
 		}
 	});
-	$('.main_header li a').on('click',function() {
-		if ($('.main_header').hasClass('open-nav')) {
-			$('.navigation').removeClass('open-nav');
-			$('.main_header').removeClass('open-nav');
-		}
-	});
+
   // navigation scroll　メニューのスクロールアニメーション
   $('nav a').on('click',function(event) {
     var id = $(this).attr("href");
@@ -46,53 +41,18 @@ $(document).ready(function(){
         scrollTop: 0
     }, 600);
     return false;
-  });
-  /* 
-    WORK IN PROGRESS
-    NAVIGATION ACTIVE STATE IN SECTION AREA
-    スクロールした時の表示のアニメーション
-  */
-  var sections = $('section'), nav = $('nav'), nav_height = nav.outerHeight();
- 
-  $(window).on('scroll', function () {
-    var cur_pos = $(this).scrollTop();
-    sections.each(function() {
-      var top = $(this).offset().top - nav_height,
-          bottom = top + $(this).outerHeight();
-      if (cur_pos >= top - 175 && cur_pos <= bottom + 100) {
-        nav.find('a').removeClass('active');
-        sections.removeClass('active');
-        var this_id = $(this).attr('id');
-        switch (this_id){
-          case "work":
-            $(this).addClass('slidein');
-            break;
-          case "ci":
-              $(this).addClass('slideleft');
-              break;
-          case "about":
-              $(this).addClass('slideright');
-              break;
-          case "access":
-              $(this).addClass('zoomin');
-              break;
-          default:
-              $(this).addClass('slidein');
-              break;
+  }); 
+  
+ /*ハンバーガーのアニメーション*/
+ $(function(){
+    $('.menu-ber').on('click',function(){  /*バーガーメニューをクリックしたら発動*/
+        if($('.burger').hasClass('active')){  /*バーガーに対してアクティブがあるかチェックする*/
+          $('.burger').removeClass('active');/*バーガーがあった場合、アクティブを消す*/  
+        }else{
+          $('.burger').addClass('active');/*アクティブを追加する*/
         }
-        $(this).addClass('active');
-        nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
-      }
     });
-  });
-  $('input[name="business"]').on('change', function(){
-    var id = $(this).attr('id');
-    $('#business .disp').css({'display':'none'});
-    $('#'+id+'_disp').css({'display':'block'});
-
-    console.log(id);
-  })
-});
+ });
 
 
 /* SCROLL TOP FUNCTION 1番上に戻るアニメーション2*/
@@ -161,3 +121,4 @@ $(function(){
 });
 
 
+});
