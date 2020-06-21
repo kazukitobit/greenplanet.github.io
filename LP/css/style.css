@@ -1,0 +1,39 @@
+html{
+	font-family: sans-serif;
+}
+body {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+.content{
+	border:solid 10px #a8d3ff;
+	background-color: #f5c9c6;
+	max-width: 960px;
+	margin: 0 auto 0 auto;
+}
+h1{
+	margin: 0;
+	padding: 20px;	
+	border:double 10px #a8d3ff;
+	color: #a8d3ff;
+	background-color:#f5c9c6;	/* レトログリーン #f5c9c6 */
+}
+.dummy{
+	height: 250px;
+}
+.disp{
+	font-size: 60px;
+	color: #8484ff;
+	margin:30px; 
+}
+button{
+	font-size: 20px;
+	margin: 10px;
+	padding: 10px;
+	width: 200px;
+	height: 100px;
+	border-radius:50%;
+	color: #8484ff;
+	background-color: #ffffff;
+}
