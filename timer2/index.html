@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>タイマー２号</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="app"> 
+		<div class="content">
+			<div><h1>タイマー２号</h1></div>
+			<div class="dummy"></div>
+				<p class ="disp" v-if="mode!=1">
+					<span>
+						<select name="hour" v-model="hour">
+							<option v-for="n in 24" ></option>
+						</select>	<!--　selectにはnameをつける。値がオプション(value)-->
+					</span> 
+					<span>:</span>
+					<span>{{ minute }}</span>
+					<span>:</span>
+					<span>{{ second }}</span>
+				</p>
+				<p class ="disp" v-if="mode==1">
+					<span>{{ hour }}</span>
+					<span>:</span>
+					<span>{{ minute }}</span>
+					<span>:</span>
+					<span>{{ second }}</span>
+				</p>				
+				<div>
+					<button @click="textStart()" id="">すたーと</button>
+					<button v-if="mode==1" @click="textStop()" id="">すとっぷ</button> 	<!--　v-if HTMLのif文　JSと紐づける-->
+					<button v-if="mode!=1" @click="textClear()" id="">くりあ</button>
+				</div>
+			<div class="dummy"></div>
+		</div>
+	</div>
+
+	<!--　vue.js 導入部 -->
+		<!-- promise (IEに必要) -->
+		<script src="https://unpkg.com/es6-promise"></script>
+		<!-- vue -->
+		<script src="https://unpkg.com/vue"></script>
+		<!-- http-vue-loader -->
+		<script src="https://unpkg.com/http-vue-loader"></script>
+		<!--　vue.js 導入部 -->
+		<script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>
