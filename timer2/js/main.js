@@ -1,8 +1,8 @@
 var app = new Vue({
 	el:"#app",
 	data:{
-		hour:3,
-		minute:0,
+		hour:0,
+		minute:3,
 		second:0,
 		obj:null,
 		mode:0, //デフォルトの状態
@@ -27,8 +27,8 @@ var app = new Vue({
 			clearInterval(this.obj); //textStertと紐づける
 		},
 		textClear(){
-			this.hour =3;
-			this.minute =0;
+			this.hour =0;
+			this.minute =3;
 			this.second =0;
 		},
 		countDown(){
@@ -50,19 +50,36 @@ var app = new Vue({
 				this.second--; /*一ずつカウント*/
 			}
 		},
-		abjustNum(){	
-		if (String(this.second).length<2) this.second = '0' + String(this.second); //数字が１以下の場合は０を増やす　文字型に変換
+		adjustNum(){	
+		if (String(this.second).length<2) this.second = '0' + String(this.second); //数字が1桁以下の場合は０を増やす(2桁になるまで0を増やす)　文字型に変換
 		if (String(this.minute).length<2) this.minute = '0' + String(this.minute);
 		if (String(this.hour).length<2) this.hour = '0' + String(this.hour);
 		},
+		intNum(){
+			this.second = Number(this.second);
+			this.minute = Number(this.minute); // 001(string) →　1(integer)に直す関数
+			this.hour = Number(this.hour);
+		}
 	},
 	// DOMの読み込み完了後
-	mounted(){	//abjustNum呼び出し　初期表示で実行
-		this.abjustNum();
+	mounted(){	//adjustNum呼び出し　初期表示で実行
+		if (this.mode==1) { 
+		this.adjustNum();
+		}else{
+			this.inttNum();
+		}
 	},
 	// data内の変数の数値が変化したら
-	updated(){	//abjustNum呼び出し　カウントしてから実行
-		this.abjustNum();
+	updated(){
+	// 	if (this.mode==1) { 
+	// 	this.adjustNum();
+	// }else{
+	// 		this.inttNum();
+	// 	}
+	// 三項演算子
+	// (条件式) ? 真の場合 :　偽の場合；
+	(this.mode==1) ? this.adjustNum() : this.intNum();
 	},
+
 
 });
