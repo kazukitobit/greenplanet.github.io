@@ -34,14 +34,12 @@ var app = new Vue({
 		countDown(){
 			if (this.second==0) {	
 			//時間と分が０になった時
-				if(this.four==0 && this.minute==0) {
-					// console.log(this.$refs.audio);
-					// this.stop();　//STOP
-
-					// this.$refs.audio.play(); //HTMLのrefを使用する
+				if(this.hour==0 && this.minute==0) {
+					 this.textStop();　//STOP
+					 this.$refs.audio.play(); //HTMLのrefを使用する
 					alert('完了'); //アラート表示
-					// this.$refs.audio.pause();
-					// this.$refs.audio.currentTime = 0; //一時停止のため0に戻す
+					this.$refs.audio.pause();
+					this.$refs.audio.currentTime = 0; //一時停止のため0に戻す
 					return;			//処理を停止(カウントダウンはここで終わり)
 				}else if (this.minute>0) {		//０より大きくなったらminuteを１減少
 					this.minute--; 
