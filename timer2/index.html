@@ -20,26 +20,26 @@
 				<p class ="disp" v-if="mode!=1">
 					<span>
 						<select name="hour" v-model="hour"
-						 style="font-size: 60px; color: #8484ff; background-color: #f5c9c6; border:solid 4px #a8d3ff;">
+						 style="">
 							<option v-for="n in 24" v-bind:value="n-1" >{{n-1}}</option>
 						</select >	<!--　selectにはnameをつける。値がオプション(value)-->
 					</span> 
-					<span>時間</span>
+					<span class="media media1">時間</span>
 					<span>
 						<select name="minute" v-model="minute"
-						 style="font-size: 60px; color: #8484ff; background-color: #f5c9c6; border:solid 4px #a8d3ff;">
+						 style="">
 							<!-- 1～60まで繰り返す　-1だと０から59になる -->
 							<option v-for="n in 60" v-bind:value="n-1" >{{n-1}}</option> 	
 						</select>	<!--　selectにはnameをつける。値がオプション(value)-->
 					</span>
-					<span>分</span>
+					<span class="media media2">分</span>
 					<span>
 						<select name="second" v-model="second"
-						 style="font-size: 60px; color: #8484ff; background-color: #f5c9c6; border:solid 4px #a8d3ff;">
+						 style="">
 							<option v-for="n in 60" v-bind:value="n-1" >{{n-1}}</option>
 						</select>	<!--　selectにはnameをつける。値がオプション(value)-->
 					</span>
-					<span>秒</span>
+					<span class="media media3">秒</span>
 				</p>
 				<p class ="disp" v-if="mode==1">
 					<span>{{ hour }}</span>
