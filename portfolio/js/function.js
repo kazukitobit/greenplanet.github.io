@@ -9,17 +9,17 @@ $(document).ready(function(){
           $('.main_header').removeClass('sticky');
       }
   });
-	// Mobile Navigation
+	/*Mobile Navigation
 	$('#toggleMenu').on('click',function() {
 		if ($('.main_header').hasClass('open-nav')) {
 			$('.main_header').removeClass('open-nav');
 		} else {
 			$('.main_header').addClass('open-nav');
 		}
-	});
+	});*/
 
   // navigation scroll　メニューのスクロールアニメーション
-  $('nav a').on('click',function(event) {
+  $('li a').on('click',function(event) {
     var id = $(this).attr("href");
     var offset = 0;
     var target = $(id).offset().top ;//セクションに戻る
@@ -53,72 +53,91 @@ $(document).ready(function(){
         }
     });
  });
-
-
-/* SCROLL TOP FUNCTION 1番上に戻るアニメーション2*/
-$(function(){
-    $('.contents').each(function(i, elem){
-        var contentsPOS = $(elem).offset().top;
-        $(window).on('load scroll resize', function(){
-            var winHeight = $(window).height();
-            var scrollTop = $(window).scrollTop();
-            var showClass = 'show';
-            var timing =    100;
-            if (scrollTop >= contentsPOS - winHeight + timing){
-              $(elem).addClass(showClass);
-            } else {
-              $(elem).removeClass(showClass);
-            }
-            if(scrollTop >= contentsPOS - winHeight + timing){
-              $(elem).addClass();
-            }
-        });
+ // メニューの表示
+  $(function(){
+    $(".menu-ber").click(function(){
+        $(".menu_nav").slideToggle(200);
     });
-});
+    /* リンクを１度クリックすると非表示になる
+    $(".menu_nav ul li a").click(function(){
+        $(".menu_nav").css({display:"none"});
+    });*/
+
+    $(".menu-ber").click(function(){
+      event.stopPropagation();
+    });
+    $(document).click(function(event){
+      if (!$(event.target).closest('.menu_nav').length) {
+        $('.menu_nav').slideUp(200);
+      }
+    });
+  });
+  
 
 
 
-/*スキルを表示するアニメ*/
-$(function(){
-
-  var skill = $('.skill');
-  skill.hide();
-  //スクロールが200に達したらボタン表示
-  $(window).scroll(function(){
-    if ($(this).scrollTop() > 2200){
-      //繰り返し処理
-      skill.each(function(i){
-        //遅延させてフェードイン
-        $(this).delay(200 * i).fadeIn(1000);
-        });
-    } else {
-      skill.fadeOut();
-       
-    }
+  /* SCROLL TOP FUNCTION 1番上に戻るアニメーション2*/
+  $(function(){
+      $('.contents').each(function(i, elem){
+          var contentsPOS = $(elem).offset().top;
+          $(window).on('load scroll resize', function(){
+              var winHeight = $(window).height();
+              var scrollTop = $(window).scrollTop();
+              var showClass = 'show';
+              var timing =    100;
+              if (scrollTop >= contentsPOS - winHeight + timing){
+                $(elem).addClass(showClass);
+              } else {
+                $(elem).removeClass(showClass);
+              }
+              if(scrollTop >= contentsPOS - winHeight + timing){
+                $(elem).addClass();
+              }
+          });
+      });
   });
 
-  skill.click(function(){
-  $('body,html').animate({
-    scrollTop: 0
-  }, 500);  
-  });
-});
 
 
-$(function(){
-    $('.js-modal-open').each(function(){
-        $(this).on('click',function(){
-            var target = $(this).data('target');
-            var modal = document.getElementById(target);
-            $(modal).fadeIn();
-            return false;
-        });
+  /*スキルを表示するアニメ*/
+  $(function(){
+
+    var skill = $('.skill');
+    skill.hide();
+    //スクロールが200に達したらボタン表示
+    $(window).scroll(function(){
+      if ($(this).scrollTop() > 2200){
+        //繰り返し処理
+        skill.each(function(i){
+          //遅延させてフェードイン
+          $(this).delay(200 * i).fadeIn(1000);
+          });
+      } else {
+        skill.fadeOut();
+         
+      }
     });
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal').fadeOut();
-        return false;
-    }); 
-});
+
+    skill.click(function(){
+    $('body,html').animate({
+      scrollTop: 0
+    }, 500);  
+    });
+  });
 
 
+  $(function(){
+      $('.js-modal-open').each(function(){
+          $(this).on('click',function(){
+              var target = $(this).data('target');
+              var modal = document.getElementById(target);
+              $(modal).fadeIn();
+              return false;
+          });
+      });
+      $('.js-modal-close').on('click',function(){
+          $('.js-modal').fadeOut();
+          return false;
+      }); 
+  });
 });
