@@ -76,29 +76,6 @@ $(document).ready(function(){
 
 
 
-  /* SCROLL TOP FUNCTION 1番上に戻るアニメーション2*/
-  $(function(){
-      $('.contents').each(function(i, elem){
-          var contentsPOS = $(elem).offset().top;
-          $(window).on('load scroll resize', function(){
-              var winHeight = $(window).height();
-              var scrollTop = $(window).scrollTop();
-              var showClass = 'show';
-              var timing =    100;
-              if (scrollTop >= contentsPOS - winHeight + timing){
-                $(elem).addClass(showClass);
-              } else {
-                $(elem).removeClass(showClass);
-              }
-              if(scrollTop >= contentsPOS - winHeight + timing){
-                $(elem).addClass();
-              }
-          });
-      });
-  });
-
-
-
   /*スキルを表示するアニメ*/
   $(function(){
 
@@ -118,11 +95,11 @@ $(document).ready(function(){
       }
     });
 
-    skill.click(function(){
+  /*  skill.click(function(){
     $('body,html').animate({
       scrollTop: 0
     }, 500);  
-    });
+    });*/
   });
 
 

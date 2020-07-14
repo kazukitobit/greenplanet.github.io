@@ -37,6 +37,9 @@ menu, nav, output, ruby, section, summary, time, mark, audio, video{
   /*開発用*/
   /*border: solid 1px red;*/
 }
+h1{
+  font-size: 30px;
+}
 a{
     text-decoration: none;
 }
@@ -236,20 +239,20 @@ section {
 .row{
   display: flex;
   text-align: center;
-  margin: 10px auto ;
   padding: 10px 0 10px 0;
-  width: 80%;
 }
 .row >div:first-child{
-  width: 80px;
 }
 .row >div:last-child{
-  width: 80%;
   text-align: center;/*文字を左揃え*/
   margin: 0 auto;
+  font-size: 25px;
   max-width: 960px;
 }
 .icon{
+    height: 80px;
+}
+.icon img{
   width: 80px;
 }
 
@@ -638,6 +641,23 @@ footer{
     width: 20%;
     height: 3em;
     border-radius: 5px;
+  }
+  .icon{
+  }
+  .icon ,.center{
+  display: inline-block;
+  }
+  .frame span{
+    display: block;
+    margin-bottom: 20px;
+
+  }
+  .row >div:last-child{
+  width: 95%;
+  text-align: center;/*文字を左揃え*/
+  margin: 0 auto;
+  font-size: 15px;
+  max-width: 960px;
   }
 
 
